@@ -6,7 +6,7 @@ import re
 
 gitrepos = open("git.txt").read().split("\n")
 
-# os.chdir("..")
+os.chdir("..")
 for line in gitrepos:
     name, url = line.split(" ")
     print name
