@@ -1,0 +1,4 @@
+gitrepomanager
+==============
+
+Managing GIT repositories.
