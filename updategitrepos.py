@@ -5,10 +5,13 @@ import sys
 import re
 
 DIR = '../'
-dirs = os.listdir(DIR)
-for dir in sorted(dirs):
+if len(sys.argv) > 1:
+    dirs = sys.argv[1:]
+else:
+    dirs = sorted(os.listdir(DIR))
+for dir in dirs:
     if os.path.exists(os.path.join(DIR, dir, '.git')):
-        print dir
+        print("Updating {dir}...".format(dir=dir))
         os.chdir(os.path.join(DIR, dir))
         os.system("git pull")
-        print
+print("Done!")
